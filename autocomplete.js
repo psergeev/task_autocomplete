@@ -34,24 +34,24 @@
         }).appendTo( container );
 
         // function to show menu with hints, no keyboard navigation allowed, only mouse click
-        var showMenu = function (data) {
+        var showMenu = function ( data ) {
 
             if (!data) return false;
 
             menu.empty();
 
-            $.each( data, function(key, value) {
+            $.each( data, function( key, value ) {
 
-                var item = $( '<div></div>')
+                var item = $( '<div></div>' )
                     .text( value.name )
                     .css({ cursor: 'pointer', padding: '3px' })
                     .mouseenter( function() {
-                        $(this).css('background-color', 'white');
+                        $(this).css( 'background-color', 'white' );
                     })
                     .mouseleave( function() {
-                        $(this).css('background-color', 'transparent');
+                        $(this).css( 'background-color', 'transparent' );
                     })
-                    .data('url', value.url)
+                    .data( 'url', value.url )
                     .click(function() {
                         $self.val( $(this).data( 'url' ) );
                         menu.hide();
